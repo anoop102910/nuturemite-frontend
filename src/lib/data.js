@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import api from "./api";
+
 const fetcher = url => api.get(url).then(res => res.data.data);
 
 export const useCategories = (queryParams = {}) => {

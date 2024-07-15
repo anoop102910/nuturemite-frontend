@@ -1,8 +1,7 @@
 import axios from "axios";
-import { NEXT_PUBLIC_SERVER_URL } from "@/config/environment";
 
 const api = axios.create({
-  baseURL: NEXT_PUBLIC_SERVER_URL,
+  baseURL: `${process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:5000"}/api`,
   withCredentials: true,
   responseType: "json",
 });

@@ -1,9 +1,7 @@
 "use client";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { useCarts, useWishlistItems } from "@/lib/data";
+import { useCarts } from "@/lib/data";
 import Loader from "@/components/shared/loader";
 import Error from "@/components/shared/common/error";
-// import RemoveFromCart from "./RemoveFromCart";
 import RemoveFromCart from "@/components/shared/home/RemoveFromCart";
 import Link from "next/link";
 import {
@@ -14,15 +12,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import api from "@/lib/api";
-import { mutate } from "swr";
 import { useState } from "react";
 import { tst } from "@/lib/utils";
-// import { Button } from "../ui/button";
 import { Button } from "@/components/ui/button";
 import OrderSummary from "./OrderSummary";
 
 const ShoppingCart = () => {
-  const { cartItems, isLoading, error } = useCarts();
+  const { cartItems, isLoading, error, mutate } = useCarts();
   const [pending, setPending] = useState(false);
   if (isLoading) return <Loader />;
   if (error) return <Error />;
@@ -45,7 +41,6 @@ const ShoppingCart = () => {
     }
   };
 
- 
   if (cartItems.length === 0) return <EmptyCart />;
 
   return (
@@ -148,6 +143,5 @@ const EmptyCart = () => (
     </div>
   </div>
 );
-
 
 export default ShoppingCart;
