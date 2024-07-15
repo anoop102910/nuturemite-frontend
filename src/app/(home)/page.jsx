@@ -1,20 +1,22 @@
 "use client";
-import { Hero } from "./components/hero";
 import { Featured } from "./components/featured";
-// import { RecentProducts } from "./components/recent";
 import { Categories } from "./components/categories";
+import { Carousel } from "./components/carousel";
+import { RecentProducts } from "./components/recent";
+import { Offer } from "./components/offer";
 
 export default function Page() {
   return (
-    <div className="pb-10">
-      <Hero />
-      <section className="mt-10">
+    <div className="py-10">
+      <section className="space-y-20">
+        <Carousel />
         <Featured />
-      </section>
-      {/* <RecentProducts /> */}
-      <section className="mt-10">
         <Categories />
+        <RecentProducts />
+        <Offer />
+        <RecentProducts />
       </section>
     </div>
   );
 }
+

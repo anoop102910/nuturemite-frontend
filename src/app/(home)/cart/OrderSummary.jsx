@@ -24,7 +24,7 @@ export default function OrderSummary({
     <div>
       <section
         aria-labelledby="summary-heading"
-        className=" bg-white lg:col-span-4 lg:mt-0 lg:p-4 "
+        className=" bg-white lg:p-4 "
       >
         <h2
           id="summary-heading"

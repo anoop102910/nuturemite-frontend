@@ -47,6 +47,7 @@ export const useBrand = (brandId) => {
 
 export const useProducts = (queryParams = {}) => {
   const params = new URLSearchParams();
+  params.set("limit", 15);
 
   if (queryParams.minprice) params.set("minprice", queryParams.minprice);
   if (queryParams.maxprice) params.set("maxprice", queryParams.maxprice);
@@ -59,15 +60,14 @@ export const useProducts = (queryParams = {}) => {
   if (queryParams.page) params.set("page", queryParams.page);
   if (queryParams.categoryName) params.set("categoryName", queryParams.categoryName);
   if (queryParams.brandName) params.set("brandName", queryParams.brandName);
+  if (queryParams.limit) params.set("limit", queryParams.limit);
 
-  params.set("limit", 15);
 
   let url = "/products";
 
   if (params.toString()) {
     url += `?${params.toString()}`;
   }
-
   const { data, error, isLoading, mutate } = useSWR(url, fetcher);
   return { products: data, error, isLoading, mutate };
 };

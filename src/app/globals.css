@@ -104,7 +104,7 @@
 
   @layer utilities {
     .navbar-heading{
-      @apply font-normal text-[0.93rem]
+      @apply font-normal text-white text-[0.93rem] hover:bg-slate-100 px-2 py-1 hover:text-slate-600 transition-all duration-200 
     }
 
     .h2-primary {
@@ -113,6 +113,10 @@
 
     .h3-primary {
       @apply uppercase mb-6 text-3xl text-slate-500 font-medium 
+    }
+
+    .image-primary{
+      @apply group-hover:rotate-6 group-hover:scale-125 transition-all duration-500 object-cover brightness-75 opacity-70 w-full h-full
     }
   }
   

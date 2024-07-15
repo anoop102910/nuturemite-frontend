@@ -44,13 +44,13 @@ const ShoppingCart = () => {
   if (cartItems.length === 0) return <EmptyCart />;
 
   return (
-    <div className="max-w-5xl mt-10 mx-auto">
+    <div className="max-w-6xl mt-10 mx-auto">
       <h2 className="h2-primary">Shopping cart</h2>
 
-      <div className="mt-8 flex  gap-16 ">
+      <div className="mt-16 flex  gap-16 ">
         {/* Cart */}
-        <div className="w-3/5">
-          <ul role="list" className="-my-6 divide-y divide-gray-200">
+        <div className={`w-3/5 ${pending && "opacity-80 pointer-events-none"}`}>
+          <ul role="list" className="-my-6 divide-y-4 divide-gray-200">
             {cartItems.map(cartItem => (
               <li key={cartItem.id} className="flex p-4 bg-white ">
                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden  border border-gray-200">

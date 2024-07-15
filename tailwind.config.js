@@ -19,7 +19,7 @@ module.exports = {
     extend: {
       colors: {
         tert: {
-          "100": "#F5A823",
+          100: "#F5A823",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -29,6 +29,9 @@ module.exports = {
         primary: {
           DEFAULT: "#F5A823",
           foreground: "hsl(var(--primary-foreground))",
+        },
+        "back-primary": {
+          DEFAULT: "#3D464D",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

@@ -4,14 +4,14 @@ import api from "@/lib/api";
 import { tst } from "@/lib/utils";
 import React, { useState } from "react";
 
-function AddToCart({ product, isChild, children }) {
+function AddToCart({ product, isChild, children,quantity }) {
   const [pending, setPending] = useState(false);
 
   async function handleCartAdd(e) {
     e.preventDefault();
     try {
       setPending(true);
-      await api.post("/cartitems", { productId: product.id, quantity: 1 });
+      await api.post("/cartitems", { productId: product.id, quantity: quantity || 1 });
       tst.success("Cart item added");
     } catch (error) {
       tst.error(error);

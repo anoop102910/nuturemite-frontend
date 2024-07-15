@@ -36,6 +36,7 @@ function LoginForm() {
         localStorage.setItem("token", token);
       }
       login();
+      router.back("/");
       tst.success("Signin success");
       setLoading(false);
     } catch (error) {

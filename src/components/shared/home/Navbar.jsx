@@ -57,25 +57,25 @@ const NavBar = () => {
       ];
 
   return (
-    <nav className="border-slate-200 border-b  ">
+    <nav className="bg-back-primary border-slate-200 border-b px-16 ">
       <div className="flex flex-wrap items-center justify-between mx-auto py-4">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            <h1 className="text-xl font-semibold text-slate-600">Nuturemite</h1>
+            <h1 className="text-xl font-semibold text-slate-200 uppercase">Nuturemite</h1>
           </span>
         </Link>
 
         <Sheet>
           <SheetTrigger asChild>
-            <Icon icon="mingcute:menu-fill" className="text-3xl lg:hidden text-slate-700" />
+            <Icon icon="mingcute:menu-fill" className="text-3xl lg:hidden text-slate-200" />
           </SheetTrigger>
-          <SheetContent side="right" className="bg-slate-800 text-white">
-            <ul className="space-y-4 space-x-6 mt-10">
+          <SheetContent side="right" className="bg-slate-800 text-slate-100">
+            <ul className="space-y-4 space-x-3 mt-10">
               {menuItems.map((menuItem, index) => (
                 <li key={index}>
                   <Link
                     href={menuItem.href}
-                    className="block py-2 px-3 md:bg-transparent "
+                    className="block py-2 px-3 md:bg-transparent text-white"
                     aria-current="page"
                   >
                     {menuItem.text}
@@ -87,7 +87,7 @@ const NavBar = () => {
         </Sheet>
 
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="font-medium  items-center flex flex-col p-4 md:p-0 mt-4 border border-slate-100  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:border-slate-700">
+          <ul className="font-medium  items-center flex flex-col p-4 md:p-0 mt-4 border border-slate-100  md:flex-row md:space-x-6 rtl:space-x-reverse md:mt-0 md:border-0  dark:border-slate-700">
             <SearchInput />
             <li>
               <NavigationMenu>
@@ -127,7 +127,7 @@ const NavBar = () => {
                 <Icon
                   icon="mynaui:cart"
                   fontSize={28}
-                  className="text-orange-700 cursor-pointer "
+                  className="text-primary cursor-pointer "
                 />
               </Link>
             </li>
