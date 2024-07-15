@@ -1,7 +1,8 @@
 import axios from "axios";
+import { NEXT_PUBLIC_SERVER_URL } from "@/config/environment";
 
 const api = axios.create({
-  baseURL: "http://localhost:5001/api",
+  baseURL: NEXT_PUBLIC_SERVER_URL,
   withCredentials: true,
   responseType: "json",
 });
@@ -22,3 +23,4 @@ api.interceptors.request.use(
 );
 
 export default api
+
